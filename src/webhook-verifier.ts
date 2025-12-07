@@ -21,7 +21,8 @@ export class WebhookVerifier {
       const expectedSignature = this.generateSignature(payload);
       return this.compareSignatures(signature, expectedSignature);
     } catch (error) {
-      throw new WebhookVerificationException(`Signature verification failed: ${error.message}`);
+      const message = error instanceof Error ? error.message : String(error);
+      throw new WebhookVerificationException(`Signature verification failed: ${message}`);
     }
   }
 
@@ -98,7 +99,8 @@ export class WebhookVerifier {
       if (error instanceof WebhookVerificationException) {
         throw error;
       }
-      throw new WebhookVerificationException(`Failed to parse webhook payload: ${error.message}`);
+      const message = error instanceof Error ? error.message : String(error);
+      throw new WebhookVerificationException(`Failed to parse webhook payload: ${message}`);
     }
   }
 
