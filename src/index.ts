@@ -1,6 +1,6 @@
 // Main exports
 export { LicenseChainClient } from './client';
-export { Configuration, ConfigurationOptions } from './configuration';
+export type { Configuration, ConfigurationOptions } from './configuration';
 export { ApiClient } from './api-client';
 
 // Services

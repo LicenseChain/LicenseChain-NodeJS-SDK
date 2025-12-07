@@ -37,7 +37,8 @@ export class LicenseValidator {
       if (error instanceof LicenseChainException) {
         throw error;
       }
-      throw new LicenseChainException(`License validation failed: ${error.message}`);
+      const message = error instanceof Error ? error.message : String(error);
+      throw new LicenseChainException(`License validation failed: ${message}`);
     }
   }
 
@@ -181,7 +182,8 @@ export class LicenseValidator {
         hardware: license.hardware
       });
     } catch (error) {
-      console.warn('Failed to update usage statistics:', error.message);
+      const message = error instanceof Error ? error.message : String(error);
+      console.warn('Failed to update usage statistics:', message);
       // Don't throw error as validation should still succeed
     }
   }
@@ -192,9 +194,13 @@ export class LicenseValidator {
   generateHardwareId(): string {
     const os = require('os');
     const networkInterfaces = os.networkInterfaces();
-    const macAddress = Object.values(networkInterfaces)
+    interface NetworkInterface {
+      internal?: boolean;
+      mac?: string;
+    }
+    const macAddress = (Object.values(networkInterfaces || {}) as NetworkInterface[][])
       .flat()
-      .find(iface => iface && !iface.internal && iface.mac !== '00:00:00:00:00:00')
+      .find((iface: NetworkInterface) => iface && !iface.internal && iface.mac !== '00:00:00:00:00:00')
       ?.mac || 'unknown';
     
     return crypto.createHash('sha256').update(macAddress).digest('hex').substring(0, 16);
