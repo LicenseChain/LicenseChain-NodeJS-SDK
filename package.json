@@ -1,0 +1,69 @@
+{
+  "name": "licensechain-node-sdk",
+  "version": "1.0.0",
+  "description": "Official LicenseChain Node.js SDK for license management and validation",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "format": "prettier --write src/**/*.ts",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "license",
+    "validation",
+    "api",
+    "sdk",
+    "nodejs",
+    "licensechain",
+    "license-management",
+    "webhook",
+    "authentication",
+    "typescript"
+  ],
+  "author": "LicenseChain Team <support@licensechain.app>",
+  "license": "Elastic-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LicenseChain/LicenseChain-NodeJS-SDK.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LicenseChain/LicenseChain-NodeJS-SDK/issues"
+  },
+  "homepage": "https://docs.licensechain.app/sdks/nodejs",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "crypto": "^1.0.1",
+    "form-data": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
+    "eslint": "^8.54.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.2"
+  },
+  "peerDependencies": {
+    "axios": "^1.6.0"
+  },
+  "peerDependenciesMeta": {
+    "axios": {
+      "optional": true
+    }
+  }
+}
