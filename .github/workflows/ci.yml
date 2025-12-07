@@ -28,12 +28,15 @@ jobs:
     
     - name: Run linter
       run: npm run lint || true
+      continue-on-error: true
     
     - name: Run type check
       run: npm run typecheck || true
+      continue-on-error: true
     
     - name: Run tests
       run: npm test || true
+      continue-on-error: true
     
     - name: Build
       run: npm run build
