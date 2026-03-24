@@ -1,6 +1,7 @@
 import { ApiClient } from '../api-client';
 import { validateNotEmpty, sanitizeMetadata, validatePagination } from '../utils';
 import { ValidationException } from '../exceptions';
+import { createHash } from 'crypto';
 
 export interface License {
   id: string;
@@ -91,7 +92,7 @@ export class LicenseService {
   async validate(licenseKey: string, hwuid?: string | null): Promise<boolean> {
     validateNotEmpty(licenseKey, 'license_key');
     const body: { key: string; hwuid?: string } = { key: licenseKey };
-    if (hwuid != null && String(hwuid).trim() !== '') body.hwuid = hwuid.trim();
+    body.hwuid = hwuid != null && String(hwuid).trim() !== '' ? hwuid.trim() : this.defaultHwuid();
     const response = await this.client.post<{ valid: boolean }>('/licenses/verify', body);
     return response.valid || false;
   }
@@ -127,5 +128,11 @@ export class LicenseService {
 
   private extractLicenseResponse(response: any): License {
     return response?.data ? response.data : response;
+  }
+
+  private defaultHwuid(): string {
+    return createHash('sha256')
+      .update(`licensechain|nodejs|${process.platform}|${process.arch}|${process.version}`)
+      .digest('hex');
   }
 }
