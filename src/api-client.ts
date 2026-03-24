@@ -30,6 +30,10 @@ export class ApiClient {
     return this.makeRequest<T>('PUT', endpoint, data);
   }
 
+  async patch<T = any>(endpoint: string, data?: any): Promise<T> {
+    return this.makeRequest<T>('PATCH', endpoint, data);
+  }
+
   async delete<T = any>(endpoint: string, data?: any): Promise<T> {
     return this.makeRequest<T>('DELETE', endpoint, data);
   }
@@ -56,7 +60,7 @@ export class ApiClient {
         ? `/v1${endpoint}`
         : `/v1/${endpoint}`;
     
-    let url = `${this.baseUrl}${normalizedEndpoint}`.replace(/\/+/g, '/');
+    let url = `${this.baseUrl}${normalizedEndpoint}`;
     
     if (params && Object.keys(params).length > 0) {
       const searchParams = new URLSearchParams();
@@ -147,10 +151,10 @@ export class ApiClient {
   }
 
   async ping(): Promise<any> {
-    return this.get('/v1/ping');
+    return this.get('/health');
   }
 
   async health(): Promise<any> {
-    return this.get('/v1/health');
+    return this.get('/health');
   }
 }

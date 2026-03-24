@@ -46,22 +46,22 @@ export class WebhookService {
       secret: request.secret
     };
     
-    const response = await this.client.post<{ data: Webhook }>('/webhooks', data);
-    return response.data;
+    const response = await this.client.post<{ data?: Webhook }>('/webhooks', data);
+    return (response.data || response) as Webhook;
   }
 
   async get(webhookId: string): Promise<Webhook> {
     this.validateUuid(webhookId, 'webhook_id');
     
-    const response = await this.client.get<{ data: Webhook }>(`/webhooks/${webhookId}`);
-    return response.data;
+    const response = await this.client.get<{ data?: Webhook }>(`/webhooks/${webhookId}`);
+    return (response.data || response) as Webhook;
   }
 
   async update(webhookId: string, updates: UpdateWebhookRequest): Promise<Webhook> {
     this.validateUuid(webhookId, 'webhook_id');
     
-    const response = await this.client.put<{ data: Webhook }>(`/webhooks/${webhookId}`, sanitizeMetadata(updates));
-    return response.data;
+    const response = await this.client.put<{ data?: Webhook }>(`/webhooks/${webhookId}`, sanitizeMetadata(updates));
+    return (response.data || response) as Webhook;
   }
 
   async delete(webhookId: string): Promise<void> {
@@ -71,8 +71,13 @@ export class WebhookService {
   }
 
   async list(): Promise<WebhookListResponse> {
-    const response = await this.client.get<WebhookListResponse>('/webhooks');
-    return response;
+    const response = await this.client.get<any>('/webhooks');
+    return {
+      data: response?.data || [],
+      total: response?.pagination?.total || (response?.data?.length || 0),
+      page: response?.pagination?.page || 1,
+      limit: response?.pagination?.limit || (response?.data?.length || 0)
+    };
   }
 
   private validateWebhookParams(url: string, events: string[]): void {
