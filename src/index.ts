@@ -14,6 +14,11 @@ export { WebhookHandler, WebhookEvents, createOutgoingWebhookSignature, verifyIn
 
 // License validation
 export { LicenseValidator } from './license-validator';
+export {
+  LICENSE_TOKEN_USE_CLAIM,
+  verifyLicenseAssertionJwt,
+  type VerifyLicenseAssertionOptions,
+} from './license-assertion';
 
 // Types
 export * from './types';
