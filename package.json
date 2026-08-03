@@ -1,5 +1,5 @@
 {
-  "name": "licensechain-node-sdk",
+  "name": "@licensechain/nodejs-sdk",
   "version": "1.0.0",
   "description": "Official LicenseChain Node.js SDK for license management and validation",
   "main": "dist/index.js",
@@ -66,5 +66,8 @@
     "axios": {
       "optional": true
     }
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
