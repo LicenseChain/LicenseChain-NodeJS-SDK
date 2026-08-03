@@ -1,6 +1,6 @@
 {
   "name": "@licensechain/nodejs-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Official LicenseChain Node.js SDK for license management and validation",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
