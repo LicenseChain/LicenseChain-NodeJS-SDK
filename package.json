@@ -31,7 +31,7 @@
     "typescript"
   ],
   "author": "LicenseChain Team <support@licensechain.app>",
-  "license": "Elastic-2.0",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/LicenseChain/LicenseChain-NodeJS-SDK.git"
