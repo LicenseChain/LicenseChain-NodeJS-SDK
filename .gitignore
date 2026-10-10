@@ -129,3 +129,4 @@ docs/build/
 # Local agent / OPSEC
 .claude/
 CLAUDE.md
+.npm/
