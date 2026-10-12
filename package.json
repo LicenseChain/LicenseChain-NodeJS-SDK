@@ -1,6 +1,6 @@
 {
   "name": "@licensechain/nodejs-sdk",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Official LicenseChain Node.js SDK for license management and validation",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -38,7 +38,8 @@
   "bugs": {
     "url": "https://github.com/LicenseChain/LicenseChain-NodeJS-SDK/issues"
   },
-  "homepage": "https://docs.licensechain.app/sdks/nodejs",
+  "homepage": "https://docs.licensechain.app/en/sdk",
+
   "engines": {
     "node": ">=20.0.0"
   },

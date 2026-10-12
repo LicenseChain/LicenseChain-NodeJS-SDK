@@ -1,9 +1,9 @@
 # LicenseChain Node.js SDK
 
 [![License](https://img.shields.io/badge/license-Elastic--2.0-blue.svg)](LICENSE)
-[![Node.js](https://img.shields.io/badge/Node.js-16+-green.svg)](https://nodejs.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-20+-green.svg)](https://nodejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-4.5+-blue.svg)](https://www.typescriptlang.org/)
-[![npm](https://img.shields.io/npm/v/licensechain-sdk)](https://www.npmjs.com/package/licensechain-sdk)
+[![npm](https://img.shields.io/npm/v/%40licensechain%2Fnodejs-sdk)](https://www.npmjs.com/package/@licensechain/nodejs-sdk)
 
 Official Node.js SDK for LicenseChain - Secure license management for Node.js applications.
 
@@ -29,17 +29,17 @@ Official Node.js SDK for LicenseChain - Secure license management for Node.js ap
 
 ```bash
 # Install via npm
-npm install licensechain-sdk
+npm install @licensechain/nodejs-sdk
 
 # Or via yarn
-yarn add licensechain-sdk
+yarn add @licensechain/nodejs-sdk
 ```
 
 ### Method 2: pnpm
 
 ```bash
 # Install via pnpm
-pnpm add licensechain-sdk
+pnpm add @licensechain/nodejs-sdk
 ```
 
 ### Method 3: Manual Installation
@@ -53,7 +53,7 @@ pnpm add licensechain-sdk
 ### Basic Setup
 
 ```typescript
-import LicenseChain from 'licensechain-sdk';
+import LicenseChain from '@licensechain/nodejs-sdk';
 
 // Initialize the client
 const client = new LicenseChain({
@@ -470,7 +470,7 @@ This project is licensed under the Elastic License 2.0 (ELv2) — see the [LICEN
 
 ## 🆘 Support
 
-- **Documentation**: [https://docs.licensechain.app/sdks/nodejs](https://docs.licensechain.app/sdks/nodejs)
+- **Documentation**: [https://docs.licensechain.app/en/sdk](https://docs.licensechain.app/en/sdk)
 - **Issues**: [GitHub Issues](https://github.com/LicenseChain/LicenseChain-NodeJS-SDK/issues)
 - **Discord**: [LicenseChain Discord](https://discord.gg/licensechain)
 - **Email**: support@licensechain.app
