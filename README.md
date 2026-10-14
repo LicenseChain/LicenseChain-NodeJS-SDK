@@ -4,6 +4,7 @@
 [![Node.js](https://img.shields.io/badge/Node.js-20+-green.svg)](https://nodejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-4.5+-blue.svg)](https://www.typescriptlang.org/)
 [![npm](https://img.shields.io/npm/v/%40licensechain%2Fnodejs-sdk)](https://www.npmjs.com/package/@licensechain/nodejs-sdk)
+[![CI](https://github.com/LicenseChain/LicenseChain-NodeJS-SDK/actions/workflows/ci.yml/badge.svg)](https://github.com/LicenseChain/LicenseChain-NodeJS-SDK/actions/workflows/ci.yml)
 
 Official Node.js SDK for LicenseChain - Secure license management for Node.js applications.
 
