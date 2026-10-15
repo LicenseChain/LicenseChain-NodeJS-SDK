@@ -481,6 +481,7 @@ This project is licensed under the Elastic License 2.0 (ELv2) — see the [LICEN
 
 - [LicenseChain JavaScript SDK](https://github.com/LicenseChain/LicenseChain-JavaScript-SDK)
 - [LicenseChain Python SDK](https://github.com/LicenseChain/LicenseChain-Python-SDK)
+- [LicenseChain Go SDK](https://github.com/LicenseChain/LicenseChain-Go-SDK)
 ---
 
 **Made with ❤️ for the Node.js community**
@@ -499,4 +500,3 @@ This SDK targets the **LicenseChain HTTP API v1** implemented by the LicenseChai
   - PATCH /licenses/:id/activate
   - PATCH /licenses/:id/extend
   - GET /analytics/stats
-
