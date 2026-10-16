@@ -1,6 +1,6 @@
 # Security Policy
 
-Report vulnerabilities to support@licensechain.app or security@licensechain.app.
+Report vulnerabilities to security@licensechain.app.
 
 ## Dependabot alerts enablement
 
