@@ -1,6 +1,6 @@
 # LicenseChain Node.js SDK
 
-[![License](https://img.shields.io/badge/license-Elastic--2.0-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Node.js](https://img.shields.io/badge/Node.js-20+-green.svg)](https://nodejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-4.5+-blue.svg)](https://www.typescriptlang.org/)
 [![npm](https://img.shields.io/npm/v/%40licensechain%2Fnodejs-sdk)](https://www.npmjs.com/package/@licensechain/nodejs-sdk)
@@ -465,7 +465,7 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 
 ## 📄 License
 
-This project is licensed under the Elastic License 2.0 (ELv2) — see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License (ELv2) — see the [LICENSE](LICENSE) file for details.
 
 ## 🆘 Support
 
